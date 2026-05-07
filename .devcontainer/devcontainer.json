@@ -1,0 +1,16 @@
+{
+  "name": "hermes-agent-dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": ["--env-file", "${localWorkspaceFolder}/.env"],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-vscode.vscode-typescript-next"
+      ]
+    }
+  },
+  "postCreateCommand": "echo 'Dev container ready. Claude Code: '$(claude --version 2>/dev/null || echo 'not found')'. Codex: '$(codex --version 2>/dev/null || echo 'not found')"
+}
